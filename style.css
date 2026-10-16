@@ -1,0 +1,26 @@
+/* Threads 插件 注入樣式：所有節點都有 data-tp */
+[data-tp="bar"] {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+  margin: 4px 0 2px; padding: 0 2px;
+  font-size: 12px; line-height: 18px; color: #8a8a8a;
+}
+[data-tp="save"], [data-tp="video"] {
+  font: inherit; font-size: 12px; line-height: 18px;
+  padding: 1px 8px; border-radius: 999px;
+  border: 1px solid #8a8a8a; background: transparent; color: inherit; cursor: pointer;
+}
+[data-tp="save"]:hover, [data-tp="video"]:hover { border-color: currentColor; color: #000; }
+@media (prefers-color-scheme: dark) { [data-tp="save"]:hover, [data-tp="video"]:hover { color: #fff; } }
+[data-tp="save"].on { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+[data-tp="video"][disabled] { opacity: .45; cursor: not-allowed; }
+[data-tp="ratio"].tp-green { color: #1f9d55; }
+[data-tp="ratio"].tp-yellow { color: #c48a00; }
+[data-tp="ratio"].tp-gray { color: #8a8a8a; }
+[data-tp="views"] { color: #6a6a6a; }
+[data-tp="toast"] {
+  position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%) translateY(10px);
+  background: #1f1f1f; color: #fff; font-size: 13px; line-height: 20px;
+  padding: 8px 14px; border-radius: 999px; box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 2147483647;
+}
+[data-tp="toast"].show { opacity: 1; transform: translateX(-50%) translateY(0); }

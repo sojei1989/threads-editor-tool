@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>Threads 小編工具</title>
+<style>
+  body { font: 13px/1.5 -apple-system, "PingFang TC", "Noto Sans TC", sans-serif; width: 320px; margin: 0; padding: 12px; color: #222; }
+  h1 { font-size: 14px; margin: 0 0 8px; }
+  .row { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+  .stat { background: #f3f3f3; border-radius: 6px; padding: 6px 8px; flex: 1; text-align: center; }
+  .stat b { display: block; font-size: 18px; }
+  .err { color: #b00020; background: #fde8ea; border-radius: 6px; padding: 6px 8px; margin: 6px 0; display: none; white-space: pre-wrap; }
+  ul { list-style: none; padding: 0; margin: 6px 0; }
+  li { border-top: 1px solid #eee; padding: 6px 0; display: flex; gap: 6px; align-items: flex-start; }
+  li a { color: #222; text-decoration: none; flex: 1; }
+  li small { color: #666; }
+  button { font: inherit; padding: 4px 10px; border-radius: 6px; border: 1px solid #bbb; background: #fff; cursor: pointer; }
+  button.primary { background: #000; color: #fff; border-color: #000; }
+  button.del { padding: 2px 6px; font-size: 12px; }
+  details { margin-top: 8px; }
+  summary { cursor: pointer; color: #444; }
+  .grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; align-items: center; margin: 6px 0; }
+  .grid input { width: 70px; font: inherit; padding: 2px 4px; }
+  .hint { color: #666; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<h1>Threads 小編工具</h1>
+<div id="err" class="err"></div>
+<div class="row">
+  <div class="stat"><b id="savedCount">0</b>收錄</div>
+  <div class="stat"><b id="hotToday">0</b>今日高流量</div>
+  <div class="stat"><b id="trendsToday">0</b>今日話題</div>
+</div>
+<div class="row">
+  <button id="export" class="primary">匯出</button>
+  <span id="lastExport" class="hint"></span>
+</div>
+<ul id="recent"></ul>
+<details>
+  <summary>設定（門檻）</summary>
+  <div class="grid" id="settings">
+    <label>回覆率 綠≥</label><input data-k="replyGreen" type="number" step="0.01">
+    <label>回覆率 黃≥</label><input data-k="replyYellow" type="number" step="0.01">
+    <label>轉發率 綠≥</label><input data-k="repostGreen" type="number" step="0.01">
+    <label>轉發率 黃≥</label><input data-k="repostYellow" type="number" step="0.01">
+    <label>分享率 綠≥</label><input data-k="shareGreen" type="number" step="0.01">
+    <label>分享率 黃≥</label><input data-k="shareYellow" type="number" step="0.01">
+    <label>讚少於 不算</label><input data-k="minLikes" type="number" step="1">
+    <label>高流量 讚≥</label><input data-k="hotLikes" type="number" step="1">
+    <label>高流量 回覆≥</label><input data-k="hotReplies" type="number" step="1">
+    <label>我的帳號</label><input data-k="me" type="text" style="width:110px">
+  </div>
+  <button id="saveSettings">存設定</button>
+</details>
+<p class="hint" id="pathHint">檔案存在 Chrome 下載資料夾的 Threads收錄/（收錄.json、收錄.md、高流量.json、趨勢話題.json、觀看數.json），改了會自動覆寫。</p>
+<script src="popup.js"></script>
+</body>
+</html>
