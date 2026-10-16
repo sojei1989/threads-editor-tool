@@ -99,6 +99,11 @@ node --test tests/*.test.js
 | `icons/` | 圖示（原創，`icon.svg` 是源檔） |
 | `docs/` | 設計、DOM 調查、實作計畫、每日排程提示詞（作者自己用 Claude Code 排程把高流量與趨勢整理成每日主題串，不在插件裡） |
 
+## 更新與問題回報
+Threads 改版可能讓工具失效，有更新會發新版。想收到更新通知，或裝好後有問題、有想加的功能，加作者的 LINE（Walllong 沃瀧居），輸入「Threads小編工具」：
+
+https://sojei-exhibition.pages.dev/line-threads
+
 ## 作者與授權
 Jeff（[Walllong 沃瀧居](https://sojei-exhibition.pages.dev)），平面設計、網站、Web App、影片剪輯。這個工具原本是做給自己用的。
 

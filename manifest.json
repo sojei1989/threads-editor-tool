@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Threads 小編工具",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "給 Threads 小編用：貼文下方顯示回覆率、轉發率、分享率，一鍵收錄文案成文字檔，高流量貼文與趨勢話題自動記錄，影片下載。資料只存本機。與 Meta 無關。",
   "action": {
     "default_popup": "popup.html",
